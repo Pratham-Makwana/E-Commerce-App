@@ -30,8 +30,8 @@ class TSizes{
 
   // Default spacing between sections
   static double defaultSpace = 24.0;
-  static double defaultBtwItems = 16.0;
-  static double defaultBtwSection= 32.0;
+  static double spaceBtwItems = 16.0;
+  static double spaceBtwSection= 32.0;
 
   // Border radius
   static double borderRadiusSm = 4.0;
