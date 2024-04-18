@@ -1,3 +1,7 @@
+# use flutter_native_splash: ^2.4.0 in pubspec.yaml
+# Run Command After Creating splash.yaml file
+#  flutter pub run flutter_native_splash:create --path=splash.yaml
+
 flutter_native_splash:
   color: "#FFFFFF"
   color_dark: "#272727"
