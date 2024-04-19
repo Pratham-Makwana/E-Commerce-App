@@ -48,7 +48,7 @@ class TSizes{
 
   // Input field
   static double inputFieldRadius = 12.0;
-  static double spaceBtwInputFieldRadius = 16.0;
+  static double spaceBtwInputField = 16.0;
 
   // Card Sizes
   static double cardRadiusLg = 16.0;
