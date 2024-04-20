@@ -1,11 +1,11 @@
-import 'package:e_commerce_app/utilis/theme/custom_Theme/appbar_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/bottton_sheet_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/checkbox_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/chip_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/elevated_button_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/outlined_button_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/text_field_theme.dart';
-import 'package:e_commerce_app/utilis/theme/custom_Theme/text_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/appbar_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/bottton_sheet_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/checkbox_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/chip_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/elevated_button_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/outlined_button_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/text_field_theme.dart';
+import 'package:e_commerce_app/utils/theme/custom_Theme/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class TAppTheme{

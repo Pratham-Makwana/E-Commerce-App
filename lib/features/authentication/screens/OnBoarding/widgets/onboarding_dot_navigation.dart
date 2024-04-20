@@ -1,9 +1,10 @@
 import 'package:e_commerce_app/features/authentication/controllers.onboarding/onboarding_controller.dart';
-import 'package:e_commerce_app/utilis/constants/colors.dart';
-import 'package:e_commerce_app/utilis/constants/sizes.dart';
-import 'package:e_commerce_app/utilis/device/device_utility.dart';
-import 'package:e_commerce_app/utilis/helpers/helper_functions.dart';
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 

@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/features/authentication/controllers.onboarding/onboarding_controller.dart';
-import 'package:e_commerce_app/utilis/constants/sizes.dart';
-import 'package:e_commerce_app/utilis/device/device_utility.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
+
 import 'package:flutter/material.dart';
 
 

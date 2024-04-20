@@ -1,6 +1,5 @@
 
-
-import 'package:e_commerce_app/utilis/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 
 class TSpacingStyle{

@@ -1,9 +1,9 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../utilis/constants/colors.dart';
-import '../../../utilis/constants/text_strings.dart';
-import '../../../utilis/helpers/helper_functions.dart';
 
 class TFormDivider extends StatelessWidget {
   TFormDivider({super.key, required this.dividerText});
@@ -19,7 +19,7 @@ class TFormDivider extends StatelessWidget {
         Flexible(
             child: Divider(
           color: dark ? TColors.darkGrey : TColors.grey,
-          thickness: 0.5,
+          thickness: 1,
           indent: 60,
           endIndent: 5,
         )),
@@ -30,7 +30,7 @@ class TFormDivider extends StatelessWidget {
         Flexible(
             child: Divider(
           color: dark ? TColors.darkGrey : TColors.grey,
-          thickness: 0.5,
+          thickness: 1,
           indent: 5,
           endIndent: 60,
         )),

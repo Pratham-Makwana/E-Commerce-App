@@ -1,9 +1,9 @@
-import 'package:e_commerce_app/utilis/helpers/helper_functions.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../utilis/constants/image_strings.dart';
-import '../../../../../utilis/constants/sizes.dart';
-import '../../../../../utilis/constants/text_strings.dart';
 
 class TLoginHeader extends StatelessWidget {
   const TLoginHeader({
