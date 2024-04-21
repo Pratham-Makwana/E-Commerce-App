@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:e_commerce_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:e_commerce_app/features/authentication/screens/OnBoarding/widgets/onboarding_dot_navigation.dart';
 import 'package:e_commerce_app/features/authentication/screens/OnBoarding/widgets/onboarding_next_button.dart';
 import 'package:e_commerce_app/features/authentication/screens/OnBoarding/widgets/onboarding_page.dart';

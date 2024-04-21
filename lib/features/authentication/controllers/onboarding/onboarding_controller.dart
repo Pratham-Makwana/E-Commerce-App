@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
-import 'package:e_commerce_app/features/authentication/screens/signup/signup.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/get_rx.dart';
@@ -30,8 +30,9 @@ class OnBoardingController extends GetxController{
     if(currentPageIndex.value == 2){
       Get.offAll(const LoginScreen());
     }else{
-      int page = currentPageIndex.value + 1;
-      pageController.jumpToPage(page);
+     int page = currentPageIndex.value + 1;
+     pageController.jumpToPage(page);
+
     }
   }
 
