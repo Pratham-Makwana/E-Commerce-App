@@ -28,6 +28,7 @@ class TCircularContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
       ),
+      child: child,
     );
   }
 }
