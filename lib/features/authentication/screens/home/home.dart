@@ -1,13 +1,14 @@
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:iconsax/iconsax.dart';
+import 'dart:ffi';
 
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
+import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import '../../../../common/widgets/custom_shapes/container/search_container.dart';
 import 'widgets/home_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -24,10 +25,30 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// AppBar
-                  THomeAppBar(),
+                  const THomeAppBar(),
+                  SizedBox(
+                    height: TSizes.spaceBtwSection,
+                  ),
 
                   /// SearchBar
+                  /// In lib/common/widgets/custom_shapes/container/search_container.dart
+                  const TSearchContainer(text: 'Search in Store'),
+                  SizedBox(
+                    height: TSizes.spaceBtwSection,
+                  ),
+
                   /// Categories
+                  Padding(
+                    // Creating Scrollable ListView
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: const Column(
+                      children: [
+                        /// Heading Of the ListView Section
+                        /// lib/common/widgets/texts/section_heading.dart
+                        TSectionHeading(title: 'Popular Categories',showActionButton: false,)
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
@@ -37,7 +58,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
 
