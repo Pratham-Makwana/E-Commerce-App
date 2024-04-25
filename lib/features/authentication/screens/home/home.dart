@@ -1,8 +1,10 @@
 import 'dart:ffi';
 
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
+import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -10,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/custom_shapes/container/search_container.dart';
 import 'widgets/home_appbar.dart';
+import 'widgets/home_categories.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +35,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// SearchBar
                   /// In lib/common/widgets/custom_shapes/container/search_container.dart
-                  const TSearchContainer(text: 'Search in Store'),
+                   TSearchContainer(text: 'Search in Store',onTap: (){},),
                   SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
@@ -41,11 +44,22 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     // Creating Scrollable ListView
                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                    child: const Column(
+                    child: Column(
                       children: [
                         /// Heading Of the ListView Section
                         /// lib/common/widgets/texts/section_heading.dart
-                        TSectionHeading(title: 'Popular Categories',showActionButton: false,)
+                        TSectionHeading(
+                          title: 'Popular Categories',
+                          showActionButton: false,
+                          color: TColors.white,
+                        ),
+                        SizedBox(
+                          height: TSizes.spaceBtwItems,
+                        ),
+
+                        /// Categories
+                        /// lib/features/authentication/screens/home/widgets/home_categories.dart
+                        const THomeCategories()
                       ],
                     ),
                   )
@@ -58,4 +72,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
 
