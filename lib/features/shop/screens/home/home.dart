@@ -1,16 +1,16 @@
-import 'dart:ffi';
-
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
-import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
+import 'package:e_commerce_app/common/widgets/images/t_rounded_images.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/device/device_utility.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-import '../../../../common/widgets/custom_shapes/container/search_container.dart';
+import 'package:get/get.dart';
+
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            /// Header
+            /// Header -- Blue Part
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
@@ -35,7 +35,11 @@ class HomeScreen extends StatelessWidget {
 
                   /// SearchBar
                   /// In lib/common/widgets/custom_shapes/container/search_container.dart
-                   TSearchContainer(text: 'Search in Store',onTap: (){},),
+                  TSearchContainer(
+                    text: 'Search in Store',
+                    onTap: () {},
+                  ),
+
                   SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
@@ -65,14 +69,25 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+
+            /// Body White Part -- 1. Banner With Sliders
+            /// Carousel Slider with Dots
+            Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                // lib/common/widgets/images
+                child: const TPromoSlider(banner: [
+                  TImages.promoBanner1,
+                  TImages.promoBanner2,
+                  TImages.promoBanner3,
+                ],
+                ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
 
 

@@ -25,9 +25,9 @@ class TColors{
   static Color textWhite = Colors.white;
 
   // Background Colors
-  static Color light = const Color(0xFFF6F6F6);
-  static Color dark = const Color(0xFF272727);
-  static Color primaryBackground = const Color(0xFFF3F5FF);
+  static const Color  light =  Color(0xFFF6F6F6);
+  static const Color dark =  Color(0xFF272727);
+  static const Color primaryBackground =  Color(0xFFF3F5FF);
 
 
   // Background Container Colors
@@ -40,8 +40,8 @@ class TColors{
   static const Color buttonDisabled = Color(0xFFC4C4C4);
 
   // Border Colors
-  static Color borderPrimary = const Color(0xFFD9D9D9);
-  static Color borderSecondary = const Color(0xFFE6E6E6);
+  static const Color borderPrimary =  Color(0xFFD9D9D9);
+  static const Color borderSecondary =  Color(0xFFE6E6E6);
 
   // Error and Validation Colors
   static Color error = const Color(0xFFD32F2F);
