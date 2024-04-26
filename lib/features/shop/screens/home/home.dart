@@ -3,6 +3,8 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_c
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_images.dart';
+import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
+import 'package:e_commerce_app/common/widgets/products/product_cart/product_cart_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         /// Heading Of the ListView Section
                         /// lib/common/widgets/texts/section_heading.dart
-                        TSectionHeading(
+                        const TSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
                           color: TColors.white,
@@ -74,14 +76,27 @@ class HomeScreen extends StatelessWidget {
             /// Body White Part -- 1. Banner With Sliders
             /// Carousel Slider with Dots
             Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
-                // lib/common/widgets/images
-                child: const TPromoSlider(banner: [
-                  TImages.promoBanner1,
-                  TImages.promoBanner2,
-                  TImages.promoBanner3,
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              // lib/common/widgets/images
+              child: Column(
+                children: [
+                  const TPromoSlider(
+                    banner: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3,
+                    ],
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwSection,
+                  ),
+
+                  /// Popular Products
+                  TGridLayout(itemCount: 2, itemBuilder: (_ , index) => const TProductCartVertical(),
+
+                  ),
                 ],
-                ),
+              ),
             ),
           ],
         ),
