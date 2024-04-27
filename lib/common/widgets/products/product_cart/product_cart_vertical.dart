@@ -4,6 +4,7 @@ import 'package:e_commerce_app/common/widgets/icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_images.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
+import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -41,9 +42,9 @@ class TProductCartVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// ----- Thumbnail Image -----
-                  const TRoundedImage(
+                   TRoundedImage(
                     imageUrl: TImages.productImage1,
-                    backgroundColor: TColors.dark,
+                    backgroundColor:  dark ? TColors.dark :TColors.light,
                     applyImageRadius: true,
                   ),
 
@@ -83,7 +84,7 @@ class TProductCartVertical extends StatelessWidget {
 
             /// Details
             Padding(
-              padding: EdgeInsets.only(left: TSizes.sm),
+              padding: const EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -94,22 +95,8 @@ class TProductCartVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      SizedBox(height: TSizes.xs),
-                      Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconSx,
-                      ),
-                    ],
-                  ),
+                  const TBrandTitleWithVerifiedIcon(title: 'Nike',),
+
                 ],
               ),
             ),
@@ -121,9 +108,9 @@ class TProductCartVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 /// Price
-                 Padding(
+                 const Padding(
                    padding:  EdgeInsets.only(left: TSizes.sm),
-                   child: const TProductPriceText(
+                   child: TProductPriceText(
                     price: '35.5',
                                    ),
                  ),
@@ -154,3 +141,7 @@ class TProductCartVertical extends StatelessWidget {
     );
   }
 }
+
+
+
+

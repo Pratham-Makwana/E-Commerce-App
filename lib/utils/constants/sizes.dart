@@ -1,7 +1,7 @@
 class TSizes{
   // Padding and margin sizes
   static double xs = 4.0;
-  static double sm = 8.0;
+  static const double sm = 8.0;
   static const double md = 16.0;
   static const double lg = 24.0;
   static double xl = 32.0;
@@ -29,7 +29,7 @@ class TSizes{
   static double imageThumbSize = 80.0;
 
   // Default spacing between sections
-  static double defaultSpace = 24.0;
+  static const double defaultSpace = 24.0;
   static double spaceBtwItems = 16.0;
   static double spaceBtwSection= 32.0;
 

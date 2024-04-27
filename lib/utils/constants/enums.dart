@@ -2,6 +2,7 @@
 // List of Enums
 // They cannot be created inside a class
 
+/// enum for the Comparison
 enum TextSizes {small, medium, large}
 
 enum OrderStatus { processing, shipped ,delivered }
