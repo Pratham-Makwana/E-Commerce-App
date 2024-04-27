@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 /// This Class for the Home Promo Slider Image
@@ -14,7 +15,7 @@ class TRoundedImage extends StatelessWidget {
     this.applyImageRadius = true,
     required this.imageUrl,
     this.boxFit = BoxFit.contain,
-    this.backgroundColor = TColors.light,
+    this.backgroundColor,
     this.isNetwork = false,
     this.borderRadius = TSizes.md,
   });
@@ -23,7 +24,7 @@ class TRoundedImage extends StatelessWidget {
   final bool applyImageRadius;
   final String imageUrl;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? boxFit;
   final EdgeInsetsGeometry? padding;
   final bool isNetwork;
@@ -32,6 +33,7 @@ class TRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: onPressed,
       child: Container(

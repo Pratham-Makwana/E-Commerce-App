@@ -33,48 +33,50 @@ class TProductCartVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Thumbnail ,Wishlist, Button, Discount Tag
+            /// Thumbnail ,Wishlist, Button, Discount Tag
             TRoundedContainer(
-                height: 180,
-                padding: const EdgeInsets.all(TSizes.md),
-                backgroundColor: dark ? TColors.dark : TColors.light,
-                child: Stack(
-                  children: [
-                    /// ----- Thumbnail Image -----
-                    const TRoundedImage(
-                      imageUrl: TImages.productImage1,
-                      applyImageRadius: true,
-                    ),
+              height: 180,
+              padding: const EdgeInsets.all(TSizes.md),
+              backgroundColor: dark ? TColors.dark : TColors.light,
+              child: Stack(
+                children: [
+                  /// ----- Thumbnail Image -----
+                  const TRoundedImage(
+                    imageUrl: TImages.productImage1,
+                    backgroundColor: TColors.dark,
+                    applyImageRadius: true,
+                  ),
 
-                    /// Sales Tags
-                    Positioned(
-                      top: 12,
-                      child: TRoundedContainer(
-                        radius: TSizes.sm,
-                        backgroundColor: TColors.secondary.withOpacity(0.8),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: TSizes.sm, vertical: TSizes.xs),
-                        child: Text(
-                          '25%',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge!
-                              .apply(color: TColors.black),
-                        ),
+                  /// Sales Tags
+                  Positioned(
+                    top: 12,
+                    child: TRoundedContainer(
+                      radius: TSizes.sm,
+                      backgroundColor: TColors.secondary.withOpacity(0.8),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: TSizes.sm, vertical: TSizes.xs),
+                      child: Text(
+                        '25%',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge!
+                            .apply(color: TColors.black),
                       ),
                     ),
+                  ),
 
-                    /// Favourites Icon Button
-                    const Positioned(
-                        // To Move the Icon   To The Right top & right = 0
-                        top: 0,
-                        right: 0,
-                        child: TCircularIcon(
-                          icon: Iconsax.heart5,
-                          color: Colors.red,
-                        ))
-                  ],
-                )),
+                  /// Favourites Icon Button
+                  const Positioned(
+                      // To Move the Icon   To The Right top & right = 0
+                      top: 0,
+                      right: 0,
+                      child: TCircularIcon(
+                        icon: Iconsax.heart5,
+                        color: Colors.red,
+                      ))
+                ],
+              ),
+            ),
             SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
@@ -105,38 +107,50 @@ class TProductCartVertical extends StatelessWidget {
                         Iconsax.verify5,
                         color: TColors.primary,
                         size: TSizes.iconSx,
-                      )
+                      ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const TProductPriceText(price: '35.5',),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: TColors.dark,
-                          borderRadius:
-                              BorderRadius.circular(TSizes.cardRadiusMd),
-                        ),
-                        child: SizedBox(
-                            width: TSizes.iconLg * 1.2,
-                            height: TSizes.iconLg * 1.2,
-                            child: Center(
-                                child: Icon(
-                              Iconsax.add,
-                              color: TColors.white,
-                            ))),
-                      )
-                    ],
-                  )
                 ],
               ),
-            )
+            ),
+            // TODO: Add Spacer() here to keep height of the each Box same in the case 1 or 2 lines of Headings
+            const Spacer(),
+
+            /// Price Row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// Price
+                 Padding(
+                   padding:  EdgeInsets.only(left: TSizes.sm),
+                   child: const TProductPriceText(
+                    price: '35.5',
+                                   ),
+                 ),
+
+                /// Add to Cart Button
+                Container(
+                  decoration: BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius:
+                    BorderRadius.circular(TSizes.cardRadiusMd),
+                  ),
+                  child: SizedBox(
+                    width: TSizes.iconLg * 1.2,
+                    height: TSizes.iconLg * 1.2,
+                    child: const Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: TColors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

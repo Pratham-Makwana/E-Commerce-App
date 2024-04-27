@@ -6,6 +6,7 @@ import 'package:e_commerce_app/common/widgets/images/t_rounded_images.dart';
 import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cart/product_cart_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -29,13 +30,13 @@ class HomeScreen extends StatelessWidget {
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  /// AppBar
+                  /// ----- AppBar --------
                   const THomeAppBar(),
                   SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
 
-                  /// SearchBar
+                  /// ------------ SearchBar ----------------
                   /// In lib/common/widgets/custom_shapes/container/search_container.dart
                   TSearchContainer(
                     text: 'Search in Store',
@@ -46,14 +47,14 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwSection,
                   ),
 
-                  /// Categories
+                  /// --------- Categories -------------
                   Padding(
                     // Creating Scrollable ListView
                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
                         /// Heading Of the ListView Section
-                        /// lib/common/widgets/texts/section_heading.dart
+                        // lib/common/widgets/texts/section_heading.dart
                         const TSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
@@ -63,8 +64,8 @@ class HomeScreen extends StatelessWidget {
                           height: TSizes.spaceBtwItems,
                         ),
 
-                        /// Categories
-                        /// lib/features/authentication/screens/home/widgets/home_categories.dart
+                        /// --------- Categories ----------
+                        // lib/features/authentication/screens/home/widgets/home_categories.dart
                         const THomeCategories()
                       ],
                     ),
@@ -80,6 +81,7 @@ class HomeScreen extends StatelessWidget {
               // lib/common/widgets/images
               child: Column(
                 children: [
+                  /// --------- Promo Slider ------------
                   const TPromoSlider(
                     banner: [
                       TImages.promoBanner1,
@@ -90,10 +92,18 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
+                   TSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () {},
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
 
-                  /// Popular Products
-                  TGridLayout(itemCount: 2, itemBuilder: (_ , index) => const TProductCartVertical(),
-
+                  /// -------- Popular Products -----------------
+                  TGridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const TProductCartVertical(),
                   ),
                 ],
               ),
@@ -104,5 +114,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
