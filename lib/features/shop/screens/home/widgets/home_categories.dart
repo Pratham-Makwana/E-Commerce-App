@@ -15,7 +15,7 @@ class THomeCategories extends StatelessWidget {
       height: 80,
       child: ListView.builder(
           shrinkWrap: true,
-          itemCount: 12,
+          itemCount: 6,
           scrollDirection: Axis.horizontal,
 
           /// itemBuilder: (_, index) first is context that i don't need and second is index it return the current index
