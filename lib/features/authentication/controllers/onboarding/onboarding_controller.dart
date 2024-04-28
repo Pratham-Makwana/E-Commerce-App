@@ -2,7 +2,6 @@ import 'package:e_commerce_app/features/authentication/screens/login/login.dart'
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 
 
 

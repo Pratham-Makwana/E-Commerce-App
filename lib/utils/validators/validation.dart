@@ -1,7 +1,5 @@
 
-import 'dart:html';
 
-import 'package:get_storage/get_storage.dart';
 
 class Tvalidator {
   
@@ -21,7 +19,7 @@ class Tvalidator {
   }
   
   static String? validatePassword(String value){
-    if(value == null || value.isEmpty){
+    if(value.isEmpty){
       return 'Password is required';
     }
     

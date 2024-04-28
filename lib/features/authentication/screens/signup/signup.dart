@@ -17,7 +17,7 @@ class SignupScreen extends StatelessWidget {
       /// default appbar provide back arrow
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
 
           /// padding for the all the side form the screen
           child: Column(

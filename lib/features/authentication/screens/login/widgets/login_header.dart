@@ -27,7 +27,7 @@ class TLoginHeader extends StatelessWidget {
           TTexts.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.sm,
         ),
         Text(
