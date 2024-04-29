@@ -13,33 +13,31 @@ class TPrimaryHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //height: 400, Remove because We want to take space that require or occupy by the Widget so removing the SizedBox
     return TCurvedEdgeWidget(
       child: Container(
         color: TColors.primary,
         padding: const EdgeInsets.all(0),
 
         /// we use stack widget for layout the widget top of each other
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            children: [
+        child: Stack(
+          children: [
 
-              /// Background Custom Shapes
-              Positioned(
-                  top: -150,
-                  right: -250,
-                  child: TCircularContainer(
-                    backgroundColor: TColors.white.withOpacity(0.1),
-                  )),
-              Positioned(
-                  top: 100,
-                  right: -300,
-                  child: TCircularContainer(
-                    backgroundColor: TColors.white.withOpacity(0.1),
-                  )),
-              child,
-            ],
-          ),
+            /// Background Custom Shapes
+            Positioned(
+                top: -150,
+                right: -250,
+                child: TCircularContainer(
+                  backgroundColor: TColors.white.withOpacity(0.1),
+                ),),
+            Positioned(
+                top: 100,
+                right: -300,
+                child: TCircularContainer(
+                  backgroundColor: TColors.white.withOpacity(0.1),
+                ),),
+            child,
+          ],
         ),
       ),
     );

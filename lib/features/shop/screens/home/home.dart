@@ -64,7 +64,10 @@ class HomeScreen extends StatelessWidget {
                         const THomeCategories()
                       ],
                     ),
-                  )
+                  ),
+                  //height: 400, Remove from the [TPrimaryHeaderContainer] because We want to take space that require or occupy by the Widget so removing the SizedBox
+                  // To the Widget Proper we use SizeBox after the all the widget apply
+                  SizedBox(height: TSizes.spaceBtwSection ,),
                 ],
               ),
             ),
