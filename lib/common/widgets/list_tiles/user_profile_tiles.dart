@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/common/widgets/images/t_circular_images.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 
@@ -36,7 +38,7 @@ class TUserProfileTitle extends StatelessWidget {
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ) ,
-      trailing: IconButton(onPressed: () {}, icon: const Icon(Iconsax.edit,color: TColors.white,),),
+      trailing: IconButton(onPressed: () => Get.to(() => const ProfileScreen()), icon: const Icon(Iconsax.edit,color: TColors.white,),),
     );
   }
 }
