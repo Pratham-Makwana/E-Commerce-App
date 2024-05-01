@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class TCurvedEdgeWidget extends StatelessWidget {
   const TCurvedEdgeWidget({
-    super.key, this.child,
+    super.key,  required this.child,
   });
-  final Widget? child;
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return ClipPath(
