@@ -4,6 +4,7 @@ import 'package:e_commerce_app/common/widgets/list_tiles/setting_menu_tiles.dart
 import 'package:e_commerce_app/common/widgets/list_tiles/user_profile_tiles.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
+import 'package:e_commerce_app/features/shop/screens/card/cart.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -57,13 +58,13 @@ class SettingScreen extends StatelessWidget {
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subTitle: 'Set Shopping delivery address',
-                    onTap: () => Get.to(()=> const UserAddressScreen()),
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   TSettingMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
                     subTitle: 'Add, remove products and move to Checkout',
-                    onTap: () {},
+                    onTap: () => Get.to(() => const CartScreen()),
                   ),
                   TSettingMenuTile(
                     icon: Iconsax.bag_tick,
@@ -143,12 +144,13 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-
                       onPressed: () {},
                       child: const Text('Logout'),
                     ),
                   ),
-                 SizedBox(height: TSizes.spaceBtwSection * 2.5,)
+                  SizedBox(
+                    height: TSizes.spaceBtwSection * 2.5,
+                  )
                 ],
               ),
             ),
