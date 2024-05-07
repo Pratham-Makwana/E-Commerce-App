@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:e_commerce_app/features/shop/screens/sub_category.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 /// This Class Have HomeScreen's Listview
@@ -21,7 +23,7 @@ class THomeCategories extends StatelessWidget {
           /// itemBuilder: (_, index) first is context that i don't need and second is index it return the current index
           itemBuilder: (_, index) {
             /// lib/common/widgets/image_text_widgets/vertical_image_text.dart
-            return TVerticalImageText(image: TImages.shoeIcon, title: 'Shoes',onTap: (){},);
+            return TVerticalImageText(image: TImages.shoeIcon, title: 'Shoes',onTap: () => Get.to(()=> const SubCategoriesScreen()),);
           }),
     );
   }

@@ -37,11 +37,14 @@ class TVerticalImageText extends StatelessWidget {
                 color: backgroundColor ?? (dark ? TColors.black : TColors.white), /// ??(Two Question Mark) means if the background color is null use bracket option
                 borderRadius: BorderRadius.circular(100),
               ),
-              child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                  color: dark ? TColors.light : TColors.dark,
+              child: Padding(
+                padding: const EdgeInsets.all(TSizes.sm),
+                child: Center(
+                  child: Image(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
+                    color: dark ? TColors.light : TColors.dark,
+                  ),
                 ),
               ),
             ),

@@ -42,9 +42,9 @@ class TProductCartVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// ----- Thumbnail Image -----
-                   TRoundedImage(
+                  TRoundedImage(
                     imageUrl: TImages.productImage1,
-                    backgroundColor:  dark ? TColors.dark :TColors.light,
+                    backgroundColor: dark ? TColors.dark : TColors.light,
                     applyImageRadius: true,
                   ),
 
@@ -54,7 +54,7 @@ class TProductCartVertical extends StatelessWidget {
                     child: TRoundedContainer(
                       radius: TSizes.sm,
                       backgroundColor: TColors.secondary.withOpacity(0.8),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
                         '25%',
@@ -68,13 +68,14 @@ class TProductCartVertical extends StatelessWidget {
 
                   /// Favourites Icon Button
                   const Positioned(
-                      // To Move the Icon   To The Right top & right = 0
-                      top: 0,
-                      right: 0,
-                      child: TCircularIcon(
-                        icon: Iconsax.heart5,
-                        color: Colors.red,
-                      ))
+                    // To Move the Icon   To The Right top & right = 0
+                    top: 0,
+                    right: 0,
+                    child: TCircularIcon(
+                      icon: Iconsax.heart5,
+                      color: Colors.red,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -95,8 +96,9 @@ class TProductCartVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  const TBrandTitleWithVerifiedIcon(title: 'Nike',),
-
+                  const TBrandTitleWithVerifiedIcon(
+                    title: 'Nike',
+                  ),
                 ],
               ),
             ),
@@ -108,19 +110,18 @@ class TProductCartVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 /// Price
-                 const Padding(
-                   padding:  EdgeInsets.only(left: TSizes.sm),
-                   child: TProductPriceText(
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: TProductPriceText(
                     price: '35.5',
-                                   ),
-                 ),
+                  ),
+                ),
 
                 /// Add to Cart Button
                 Container(
                   decoration: BoxDecoration(
                     color: TColors.dark,
-                    borderRadius:
-                    BorderRadius.circular(TSizes.cardRadiusMd),
+                    borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
                   ),
                   child: SizedBox(
                     width: TSizes.iconLg * 1.2,
@@ -132,7 +133,7 @@ class TProductCartVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],
@@ -141,7 +142,3 @@ class TProductCartVertical extends StatelessWidget {
     );
   }
 }
-
-
-
-
