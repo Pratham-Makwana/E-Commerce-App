@@ -103,6 +103,10 @@ class TProductCartVertical extends StatelessWidget {
               ),
             ),
             // TODO: Add Spacer() here to keep height of the each Box same in the case 1 or 2 lines of Headings
+            /// Use Spacer() to utilise all the space to set the price and cart button at the bottom.
+            /// You Using the spacer and you not defining specific height it throw an error.
+            /// if you not using grid layout you have to define the height
+            /// using the spacer to going to push upper widget to top and lower widget to bottom and spacer take all required space
             const Spacer(),
 
             /// Price Row
