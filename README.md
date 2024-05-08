@@ -27,7 +27,9 @@
 GENERATE SHA-1 & SHA-256
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Mac: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
 Windows: keytool -list -v -keystore "\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
 Linux: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
 
 In Windows, 
