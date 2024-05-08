@@ -24,13 +24,12 @@
 8. Adding SHA-1 and SHA-256 for Firebase Authentication:
    Ensure a smooth run of Firebase Authentication by adding SHA-1 and SHA-256 in Firebase. This essential step ensures the security and integrity of your authentication process.
 
-GENERATE SHA-1 & SHA-256
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Mac: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+GENERATE SHA-1 & SHA-256 :
+   - Mac: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
 
-Windows: keytool -list -v -keystore "\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+   - Windows: keytool -list -v -keystore "\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 
-Linux: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+   - Linux: keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
 
 In Windows, 
     After Run The Command You Get Error Like, java.lang.Exception: Keystore file does not exist: \.android\debug.keystore 
