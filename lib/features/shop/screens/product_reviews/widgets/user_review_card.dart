@@ -24,7 +24,7 @@ class UserReviewCard extends StatelessWidget {
                 const CircleAvatar(
                   backgroundImage: AssetImage(TImages.userProfileImage2),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: TSizes.spaceBtwItems,
                 ),
                 Text(
@@ -36,7 +36,7 @@ class UserReviewCard extends StatelessWidget {
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
 
@@ -46,7 +46,7 @@ class UserReviewCard extends StatelessWidget {
             const TRatingBarIndicator(
               rating: 4,
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems,
             ),
             Text(
@@ -55,7 +55,7 @@ class UserReviewCard extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
 
@@ -74,7 +74,7 @@ class UserReviewCard extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: TSizes.spaceBtwItems,),
+        const SizedBox(height: TSizes.spaceBtwItems,),
 
         /// Company Review
         TRoundedContainer(
@@ -93,7 +93,7 @@ class UserReviewCard extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -116,7 +116,7 @@ class UserReviewCard extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: TSizes.spaceBtwSection,),
+        const SizedBox(height: TSizes.spaceBtwSection,),
       ],
     );
   }

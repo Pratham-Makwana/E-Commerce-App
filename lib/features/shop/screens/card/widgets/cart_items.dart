@@ -26,12 +26,12 @@ class TCartItems extends StatelessWidget {
       /// add physics: const NeverScrollableScrollPhysics(), in [ListView] or Remove Both.
 
       itemCount: 2,
-      separatorBuilder: (_, __) => SizedBox(height: TSizes.spaceBtwSection),
+      separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSection),
       itemBuilder: (_, index) => Column(
         children: [
           const TCartItem(),
           if (showAddRemoveButton)
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems,
             ),
           if (showAddRemoveButton)

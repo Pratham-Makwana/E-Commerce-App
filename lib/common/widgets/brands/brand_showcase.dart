@@ -20,12 +20,12 @@ class TBrandShowCase extends StatelessWidget {
       borderColor: TColors.grey,
       backgroundColor: Colors.transparent,
       padding: const EdgeInsets.all(TSizes.md),
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child:   Column(
         children: [
           /// Brand With Product Count
           const TBrandCart(showBorder: false),
-          SizedBox(height: TSizes.spaceBtwItems,),
+          const SizedBox(height: TSizes.spaceBtwItems,),
 
           Row(
             children: images.map((image) => brandTopProductImageWidget(image , context)).toList(),

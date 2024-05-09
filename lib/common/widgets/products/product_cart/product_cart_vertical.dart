@@ -79,24 +79,24 @@ class TProductCartVertical extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
 
             /// Details
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TProductTitleText(
+                  TProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  const TBrandTitleWithVerifiedIcon(
+                  TBrandTitleWithVerifiedIcon(
                     title: 'Nike',
                   ),
                 ],
@@ -127,10 +127,10 @@ class TProductCartVertical extends StatelessWidget {
                     color: TColors.dark,
                     borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
                   ),
-                  child: SizedBox(
+                  child: const SizedBox(
                     width: TSizes.iconLg * 1.2,
                     height: TSizes.iconLg * 1.2,
-                    child: const Center(
+                    child: Center(
                       child: Icon(
                         Iconsax.add,
                         color: TColors.white,

@@ -22,7 +22,7 @@ class TRatingAndShare extends StatelessWidget {
               size: 24,
               color: Colors.amber,
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems / 2,
             ),
             Text.rich(
@@ -35,7 +35,7 @@ class TRatingAndShare extends StatelessWidget {
             )
           ],
         ),
-        IconButton(onPressed: (){}, icon:  Icon(Icons.share,size: TSizes.iconMd,))
+        IconButton(onPressed: (){}, icon:  const Icon(Icons.share,size: TSizes.iconMd,))
       ],
     );
   }

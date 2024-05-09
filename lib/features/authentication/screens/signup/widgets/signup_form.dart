@@ -28,7 +28,7 @@ class TSignupForm extends StatelessWidget {
                   expands: false,
                 ),
               ),
-              SizedBox(width: TSizes.spaceBtwInputField),
+              const SizedBox(width: TSizes.spaceBtwInputField),
               Expanded(
                 child: TextFormField(
                   decoration: const InputDecoration(
@@ -39,7 +39,7 @@ class TSignupForm extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: TSizes.spaceBtwInputField),
+          const SizedBox(height: TSizes.spaceBtwInputField),
 
           /// Username
           TextFormField(
@@ -48,21 +48,21 @@ class TSignupForm extends StatelessWidget {
                 prefixIcon: Icon(Iconsax.user_edit)),
             expands: false,
           ),
-          SizedBox(height: TSizes.spaceBtwInputField),
+          const SizedBox(height: TSizes.spaceBtwInputField),
 
           /// Email
           TextFormField(
             decoration: const InputDecoration(
                 labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
-          SizedBox(height: TSizes.spaceBtwInputField),
+          const SizedBox(height: TSizes.spaceBtwInputField),
 
           /// Phone Number
           TextFormField(
             decoration: const InputDecoration(
                 labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
-          SizedBox(height: TSizes.spaceBtwInputField),
+          const SizedBox(height: TSizes.spaceBtwInputField),
 
           /// Password
           TextFormField(
@@ -73,11 +73,11 @@ class TSignupForm extends StatelessWidget {
               suffixIcon: Icon(Iconsax.eye_slash),
             ),
           ),
-          SizedBox(height: TSizes.spaceBtwInputField),
+          const SizedBox(height: TSizes.spaceBtwInputField),
 
           /// Term and Condition Checkbox
           const TTermAndConditionCheckbox(),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwSection,
           ),
 

@@ -24,7 +24,7 @@ class ProductReviewScreen extends StatelessWidget {
             children: [
               const Text(
                   "Rating and review are verified and are form people who use same type of device that you use"),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -32,7 +32,7 @@ class ProductReviewScreen extends StatelessWidget {
               const TOverallProductRating(),
               const TRatingBarIndicator(rating: 3.5,),
               Text('12966',style: Theme.of(context).textTheme.bodySmall,),
-              SizedBox(height: TSizes.spaceBtwSection,),
+              const SizedBox(height: TSizes.spaceBtwSection,),
 
               /// User Review List
               const UserReviewCard(),

@@ -49,7 +49,7 @@ class TSearchContainer extends StatelessWidget {
                 icon,
                 color: TColors.darkerGrey,
               ),
-              SizedBox(
+              const SizedBox(
                 width: TSizes.spaceBtwItems,
               ),
               Text(

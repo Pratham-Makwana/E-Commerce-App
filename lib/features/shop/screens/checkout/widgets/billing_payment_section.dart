@@ -16,7 +16,7 @@ class TBillingPaymentMethodSection extends StatelessWidget {
     return  Column(
       children: [
         TSectionHeading(title: 'Payment Method',buttonTitle: 'Change',onPressed: (){},),
-        SizedBox(height: TSizes.spaceBtwItems / 2,),
+        const SizedBox(height: TSizes.spaceBtwItems / 2,),
         Row(
           children: [
             TRoundedContainer(
@@ -26,7 +26,7 @@ class TBillingPaymentMethodSection extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.sm),
               child: const Image(image: AssetImage(TImages.paypal),fit: BoxFit.contain,),
             ),
-            SizedBox(width: TSizes.spaceBtwItems / 2,),
+            const SizedBox(width: TSizes.spaceBtwItems / 2,),
             Text('Paypal',style: Theme.of(context).textTheme.bodyLarge,)
           ],
         )

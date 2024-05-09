@@ -18,7 +18,7 @@ class TLoginForm extends StatelessWidget {
     return Form(
       child: Padding(
         padding:
-        EdgeInsets.symmetric(vertical: TSizes.spaceBtwSection),
+        const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSection),
         child: Column(
           children: [
             TextFormField(
@@ -27,7 +27,7 @@ class TLoginForm extends StatelessWidget {
                 labelText: TTexts.email,
               ),
             ),
-            SizedBox(height: TSizes.spaceBtwInputField),
+            const SizedBox(height: TSizes.spaceBtwInputField),
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
@@ -35,7 +35,7 @@ class TLoginForm extends StatelessWidget {
                 suffixIcon: Icon(Iconsax.eye_slash),
               ),
             ),
-            SizedBox(height: TSizes.spaceBtwInputField / 2),
+            const SizedBox(height: TSizes.spaceBtwInputField / 2),
 
             /// Remember Me & Forget Password
             Row(
@@ -55,7 +55,7 @@ class TLoginForm extends StatelessWidget {
                     child: const Text(TTexts.forgetPassword))
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSection,
             ),
 
@@ -65,7 +65,7 @@ class TLoginForm extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () => Get.to(()=>const NavigationMenu()),
                     child: const Text(TTexts.signIn))),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems,
             ),
 

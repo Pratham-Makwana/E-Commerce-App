@@ -39,28 +39,28 @@ class TProductMetaData extends StatelessWidget {
                     .apply(color: TColors.black),
               ),
             ),
-            SizedBox(width: TSizes.spaceBtwItems,),
+            const SizedBox(width: TSizes.spaceBtwItems,),
 
             /// Price
             Text('\$250',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
-            SizedBox(width: TSizes.spaceBtwItems / 2,),
+            const SizedBox(width: TSizes.spaceBtwItems / 2,),
             const TProductPriceText(price: '175',isLarge: true,),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
 
         /// Title
         const TProductTitleText(title: 'Nike Sport TShirt'),
-        SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
         /// Stock Status
         Row(
           children: [
             const TProductTitleText(title: 'Status:'),
-            SizedBox(width: TSizes.spaceBtwItems / 1.5,),
+            const SizedBox(width: TSizes.spaceBtwItems / 1.5,),
             Text('In Stock',style: Theme.of(context).textTheme.titleMedium  ,),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
         
         /// Brand
         Row(

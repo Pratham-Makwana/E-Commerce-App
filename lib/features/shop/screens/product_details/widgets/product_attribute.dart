@@ -29,7 +29,7 @@ class TProductAttributes extends StatelessWidget {
                     title: 'Variation',
                     showActionButton: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: TSizes.spaceBtwItems,
                   ),
                   Column(
@@ -41,7 +41,7 @@ class TProductAttributes extends StatelessWidget {
                             title: 'Price: ',
                             smallSize: true,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: TSizes.spaceBtwItems / 2,
                           ),
 
@@ -53,7 +53,7 @@ class TProductAttributes extends StatelessWidget {
                                 .titleSmall!
                                 .apply(decoration: TextDecoration.lineThrough),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: TSizes.spaceBtwItems / 2,
                           ),
 
@@ -71,7 +71,7 @@ class TProductAttributes extends StatelessWidget {
                             title: 'Stock: ',
                             smallSize: true,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: TSizes.spaceBtwItems / 2,
                           ),
                           Text(
@@ -95,7 +95,7 @@ class TProductAttributes extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
 
@@ -107,7 +107,7 @@ class TProductAttributes extends StatelessWidget {
               title: "Colors",
               showActionButton: false,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
             Wrap(
@@ -141,7 +141,7 @@ class TProductAttributes extends StatelessWidget {
               title: "Sizes",
               showActionButton: false,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
             Wrap(

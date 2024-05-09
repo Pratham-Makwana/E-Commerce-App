@@ -38,7 +38,7 @@ class SettingScreen extends StatelessWidget {
 
                   /// User Profile Card
                   const TUserProfileTitle(),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
                 ],
@@ -54,7 +54,7 @@ class SettingScreen extends StatelessWidget {
                     title: 'Account Setting',
                     showActionButton: false,
                   ),
-                  SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: TSizes.spaceBtwItems),
                   TSettingMenuTile(
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
@@ -99,14 +99,14 @@ class SettingScreen extends StatelessWidget {
                   ),
 
                   /// ---------- App Setting --------
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
                   const TSectionHeading(
                     title: 'App Setting',
                     showActionButton: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
                   const TSettingMenuTile(
@@ -139,7 +139,7 @@ class SettingScreen extends StatelessWidget {
                   ),
 
                   /// ----- Logout Button
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
                   SizedBox(
@@ -149,7 +149,7 @@ class SettingScreen extends StatelessWidget {
                       child: const Text('Logout'),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection * 2.5,
                   )
                 ],

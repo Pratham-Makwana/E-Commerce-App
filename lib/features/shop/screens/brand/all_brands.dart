@@ -26,7 +26,7 @@ class AllBrandScreen extends StatelessWidget {
             children: [
               /// ----- Heading
               const TSectionHeading(title: 'Brand',showActionButton: false,),
-              SizedBox(height: TSizes.spaceBtwItems,),
+              const SizedBox(height: TSizes.spaceBtwItems,),
 
 
               /// Brands

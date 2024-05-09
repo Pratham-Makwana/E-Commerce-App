@@ -14,7 +14,7 @@ class OrderListItems extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       itemCount: 3,
-      separatorBuilder: (_,__) => SizedBox(height: TSizes.spaceBtwItems,),
+      separatorBuilder: (_,__) => const SizedBox(height: TSizes.spaceBtwItems,),
       itemBuilder: (_,index) => TRoundedContainer(
         padding: const EdgeInsets.all(TSizes.md),
         showBorder: true,
@@ -26,7 +26,7 @@ class OrderListItems extends StatelessWidget {
               children: [
                 ///  1- Icon
                 const Icon(Iconsax.ship),
-                SizedBox(width: TSizes.spaceBtwItems / 2,),
+                const SizedBox(width: TSizes.spaceBtwItems / 2,),
 
                 /// 2- Status & Date
                 Expanded(
@@ -40,10 +40,10 @@ class OrderListItems extends StatelessWidget {
                   ),
                 ),
                 /// 3- Icon
-                IconButton(onPressed: (){}, icon: Icon(Iconsax.arrow_right_34,size: TSizes.iconSm,),)
+                IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_34,size: TSizes.iconSm,),)
               ],
             ),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             /// - Row -1
             Row(
               children: [
@@ -52,7 +52,7 @@ class OrderListItems extends StatelessWidget {
                     children: [
                       ///  1- Icon
                       const Icon(Iconsax.tag),
-                      SizedBox(width: TSizes.spaceBtwItems / 2,),
+                      const SizedBox(width: TSizes.spaceBtwItems / 2,),
 
                       /// 2- Status & Date
                       Expanded(
@@ -73,7 +73,7 @@ class OrderListItems extends StatelessWidget {
                     children: [
                       ///  1- Icon
                       const Icon(Iconsax.calendar),
-                      SizedBox(width: TSizes.spaceBtwItems / 2,),
+                      const SizedBox(width: TSizes.spaceBtwItems / 2,),
 
                       /// 2- Status & Date
                       Expanded(

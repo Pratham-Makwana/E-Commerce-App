@@ -40,7 +40,7 @@ class ProductDetail extends StatelessWidget {
 
                   /// ---- Attribute
                   const TProductAttributes(),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
 
@@ -49,7 +49,7 @@ class ProductDetail extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () {}, child: const Text('Checkout'))),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
 
@@ -58,7 +58,7 @@ class ProductDetail extends StatelessWidget {
                     title: 'Description',
                     showActionButton: false,
                   ),
-                  SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: TSizes.spaceBtwItems),
                   const ReadMoreText(
                     'This is a Product description for Blue Nike Sleeve less vest. There are more things can be added but i am going to ingorer now because we can do when we doing backend work ',
                     trimLines: 2,
@@ -73,7 +73,7 @@ class ProductDetail extends StatelessWidget {
 
                   /// ---- Review
                   const Divider(),
-                  SizedBox(height: TSizes.spaceBtwItems,),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -81,7 +81,7 @@ class ProductDetail extends StatelessWidget {
                       IconButton(onPressed: () => Get.to(()=> const ProductReviewScreen()), icon: const Icon(Iconsax.arrow_right_3,size: 18,))
                     ],
                   ),
-                  SizedBox(height: TSizes.spaceBtwSection,),
+                  const SizedBox(height: TSizes.spaceBtwSection,),
 
                 ],
               ),

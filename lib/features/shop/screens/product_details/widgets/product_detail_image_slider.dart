@@ -25,11 +25,11 @@ class TProductImageSlider extends StatelessWidget {
         child: Stack(
           children: [
             /// Main Large Image
-            SizedBox(
+            const SizedBox(
               height: 400,
               child: Padding(
                 padding: EdgeInsets.all(TSizes.productImageRadius * 2),
-                child: const Center(
+                child: Center(
                   child: Image(
                     image: AssetImage(TImages.productImage5),
                   ),
@@ -49,7 +49,7 @@ class TProductImageSlider extends StatelessWidget {
                   shrinkWrap: true,
                   physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  separatorBuilder: (_, __) => SizedBox(
+                  separatorBuilder: (_, __) => const SizedBox(
                     width: TSizes.spaceBtwItems,
                   ),
                   itemBuilder: (_, index) => TRoundedImage(

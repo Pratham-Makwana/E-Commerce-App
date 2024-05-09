@@ -50,14 +50,14 @@ class StoreScreen extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       /// ------------- SearchBar ------------
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems,
                       ),
                       const TSearchContainer(
                         text: 'Search in Store',
                         padding: EdgeInsets.zero,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwSection,
                       ),
 
@@ -66,7 +66,7 @@ class StoreScreen extends StatelessWidget {
                         title: 'Featured Brands',
                         onPressed: () => Get.to(()=> const AllBrandScreen()),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems / 1.5,
                       ),
 

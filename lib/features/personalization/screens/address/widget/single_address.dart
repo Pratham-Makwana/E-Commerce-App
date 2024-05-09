@@ -27,7 +27,7 @@ class TSingleAddress extends StatelessWidget {
           : dark
               ? TColors.darkerGrey
               : TColors.grey,
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child: Stack(
         children: [
           Positioned(

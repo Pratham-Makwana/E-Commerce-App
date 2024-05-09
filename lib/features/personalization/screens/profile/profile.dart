@@ -42,11 +42,11 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               /// Details
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems / 2,
               ),
               const Divider(),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -55,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Profile Information',
                 showActionButton: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -70,11 +70,11 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () {},
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               const Divider(),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Personal Information',
                 showActionButton: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -114,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () {},
               ),
               const Divider(),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 

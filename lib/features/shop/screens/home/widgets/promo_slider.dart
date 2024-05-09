@@ -40,7 +40,7 @@ class TPromoSlider extends StatelessWidget {
           //   ),
           // ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems),
+        const SizedBox(height: TSizes.spaceBtwItems),
         Obx(
           ()=>
             Row(

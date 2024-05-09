@@ -28,7 +28,7 @@ class AddNewAddressScreen extends StatelessWidget {
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 TextFormField(
@@ -36,7 +36,7 @@ class AddNewAddressScreen extends StatelessWidget {
                       prefixIcon: Icon(Iconsax.mobile),
                       labelText: 'Phone Number'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 Row(
@@ -48,7 +48,7 @@ class AddNewAddressScreen extends StatelessWidget {
                             labelText: 'Street'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: TSizes.spaceBtwInputField,
                     ),
                     Expanded(
@@ -60,7 +60,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 Row(
@@ -72,7 +72,7 @@ class AddNewAddressScreen extends StatelessWidget {
                             labelText: 'City'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: TSizes.spaceBtwInputField,
                     ),
                     Expanded(
@@ -84,7 +84,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 TextFormField(

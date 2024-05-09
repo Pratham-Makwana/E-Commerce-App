@@ -29,7 +29,7 @@ class SubCategoriesScreen extends StatelessWidget {
                 imageUrl: TImages.banner3,
                 width: double.infinity,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSection,
               ),
 
@@ -40,7 +40,7 @@ class SubCategoriesScreen extends StatelessWidget {
                     title: 'Sport shirts',
                     onPressed: () {},
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
                   SizedBox(
@@ -49,7 +49,7 @@ class SubCategoriesScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 4,
                         itemBuilder: (context, index) => const TProductCardHorizonatal(),
-                      separatorBuilder: (_,__) => SizedBox(width: TSizes.spaceBtwItems,),
+                      separatorBuilder: (_,__) => const SizedBox(width: TSizes.spaceBtwItems,),
                     ),
                   ),
                 ],

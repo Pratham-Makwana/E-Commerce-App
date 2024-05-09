@@ -84,17 +84,17 @@ class TProductCardHorizonatal extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TProductTitleText(
+                      TProductTitleText(
                         title: 'Green Nike Shoes ',
                         smallSize: true,
                       ),
                       SizedBox(
                         height: TSizes.spaceBtwItems / 2,
                       ),
-                      const TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                      TBrandTitleWithVerifiedIcon(title: 'Nike'),
                     ],
                   ),
                   const Spacer(),
@@ -112,10 +112,10 @@ class TProductCardHorizonatal extends StatelessWidget {
                           borderRadius:
                               BorderRadius.circular(TSizes.cardRadiusMd),
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: TSizes.iconLg * 1.2,
                           height: TSizes.iconLg * 1.2,
-                          child: const Center(
+                          child: Center(
                             child: Icon(
                               Iconsax.add,
                               color: TColors.white,

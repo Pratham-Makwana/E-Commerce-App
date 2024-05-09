@@ -39,7 +39,7 @@ class TBrandCart extends StatelessWidget {
                 overlayColor: isDark ? TColors.white : TColors.black,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems / 2,
             ),
 

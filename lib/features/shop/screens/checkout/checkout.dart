@@ -37,13 +37,13 @@ class CheckoutScreen extends StatelessWidget {
               const TCartItems(
                 showAddRemoveButton: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSection,
               ),
 
               /// ---- Coupon TextField
               const TCouponCode(),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSection,
               ),
 
@@ -52,28 +52,28 @@ class CheckoutScreen extends StatelessWidget {
                 showBorder: true,
                 padding: const EdgeInsets.all(TSizes.md),
                 backgroundColor: dark ? TColors.black : TColors.white,
-                child: Column(
+                child: const Column(
                   children: [
                     /// Pricing
-                    const TBillingAmountSection(),
+                    TBillingAmountSection(),
                     SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),
 
                     /// Divider
-                    const Divider(),
+                    Divider(),
                     SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),
 
                     /// Payment Method
-                    const TBillingPaymentMethodSection(),
+                    TBillingPaymentMethodSection(),
                     SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),
 
                     /// Addresses
-                    const TBillingAddressSection(),
+                    TBillingAddressSection(),
                   ],
                 ),
               )

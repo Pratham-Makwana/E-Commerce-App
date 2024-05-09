@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   /// ----- AppBar --------
                   const THomeAppBar(),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
 
@@ -40,19 +40,19 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {},
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
 
                   /// --------- Categories -------------
-                  Padding(
+                  const Padding(
                     // Creating Scrollable ListView
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
                         /// Heading Of the ListView Section
                         // lib/common/widgets/texts/section_heading.dart
-                        const TSectionHeading(
+                        TSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
                           color: TColors.white,
@@ -63,13 +63,13 @@ class HomeScreen extends StatelessWidget {
 
                         /// --------- Categories ----------
                         // lib/features/authentication/screens/home/widgets/home_categories.dart
-                        const THomeCategories()
+                        THomeCategories()
                       ],
                     ),
                   ),
                   //height: 400, Remove from the [TPrimaryHeaderContainer] because We want to take space that require or occupy by the Widget so removing the SizedBox
                   // To the Widget Proper we use SizeBox after the all the widget apply
-                  SizedBox(height: TSizes.spaceBtwSection ,),
+                  const SizedBox(height: TSizes.spaceBtwSection ,),
                 ],
               ),
             ),
@@ -89,14 +89,14 @@ class HomeScreen extends StatelessWidget {
                       TImages.promoBanner3,
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
                    TSectionHeading(
                     title: 'Popular Products',
                     onPressed: () => Get.to(()=> const AllProducts()),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
 

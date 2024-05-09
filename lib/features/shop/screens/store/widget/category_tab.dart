@@ -34,7 +34,7 @@ class TCategoryTab extends StatelessWidget {
                     TImages.productImage3,
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwItems,
                 ),
 
@@ -43,14 +43,14 @@ class TCategoryTab extends StatelessWidget {
                   title: 'you might like ',
                   onPressed: () {},
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwItems,
                 ),
 
                 TGridLayout(
                     itemCount: 4,
                     itemBuilder: (_, index) => const TProductCartVertical()),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwSection,
                 ),
               ],

@@ -30,7 +30,7 @@ class TSortableProducts extends StatelessWidget {
             /// Map is property is going to return whatever we are going to return to this function, option or e is  going to represent each entity individually using loop
           ].map((option) => DropdownMenuItem(value: option,child: Text(option),)).toList(),
         ),
-        SizedBox(height: TSizes.spaceBtwSection,),
+        const SizedBox(height: TSizes.spaceBtwSection,),
         /// Product
         TGridLayout(itemCount: 5, itemBuilder: (_,index) => const TProductCartVertical())
       ],

@@ -14,25 +14,25 @@ class TBillingAddressSection extends StatelessWidget {
       children: [
         TSectionHeading(title: 'Shipping Address',buttonTitle: 'Change',onPressed: (){},),
         Text('Pratham Makwana',style: Theme.of(context).textTheme.bodyLarge,),
-        SizedBox(height: TSizes.spaceBtwItems / 2,),
+        const SizedBox(height: TSizes.spaceBtwItems / 2,),
         Row(
           children: [
             const Icon(Icons.phone,size: 16,color: Colors.grey,),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             Text('+92-317-8059525',style: Theme.of(context).textTheme.bodyMedium,),
 
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 2,),
+        const SizedBox(height: TSizes.spaceBtwItems / 2,),
         Row(
           children: [
             const Icon(Icons.location_history,size: 16,color: Colors.grey,),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             Text('South Liana, Maine 87695 USA',style: Theme.of(context).textTheme.bodyMedium,softWrap: true,),
 
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 2,),
+        const SizedBox(height: TSizes.spaceBtwItems / 2,),
       ],
     );
   }

@@ -26,7 +26,7 @@ class TVerticalImageText extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: EdgeInsets.only(right: TSizes.spaceBtwItems),
+        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
         child: Column(
           children: [
             /// Circular Icon
@@ -50,7 +50,7 @@ class TVerticalImageText extends StatelessWidget {
             ),
 
             /// Text
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
             SizedBox(
