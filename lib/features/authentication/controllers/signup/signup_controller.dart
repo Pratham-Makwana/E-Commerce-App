@@ -24,7 +24,7 @@ class SignupController extends GetxController {
   Future<void> signup() async {
     try {
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('We are processing yout information...', TImages.productsSaleIllustration);
+      TFullScreenLoader.openLoadingDialog('We are processing you information...', TImages.productsSaleIllustration);
       // Internet Connectivity
       // Form Validation
       // Privacy Policy Check
