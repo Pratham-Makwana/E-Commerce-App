@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 class TFormatter{
 
 
-  static String formateDate(DateTime? date){
+  static String formatDate(DateTime? date){
     date ??= DateTime.now();
     return DateFormat('dd-mm-yyyy').format(date); // Customize the data format as needed
   }
