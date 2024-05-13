@@ -6,7 +6,7 @@ import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-/// Repository class  for  User-Related operation
+/// Repository Class For User-Related Operation
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
@@ -15,7 +15,6 @@ class UserRepository extends GetxController {
   /// Function to save user data to Firestore
   Future<void> saveUserRecord(UserModel user) async {
     try{
-
       /// If you don't pass doc(user.id) (Document id it will be  random generate Document id)
       await _db.collection("Users").doc(user.id).set(user.toJson());
     } on FirebaseException catch(e){
