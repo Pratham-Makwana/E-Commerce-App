@@ -1,32 +1,27 @@
 import 'package:e_commerce_app/common/styles/spacing_styles.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 
 class SuccessScreen extends StatelessWidget {
     const SuccessScreen({
-    super.key, required this.image, required this.title, required this.subtitle, required this.onpressed,
+    super.key, required this.image, required this.title, required this.subtitle, required this.onPressed,
   });
 
     final String image,title,subtitle;
-    final VoidCallback onpressed;
+    final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: TSpacingStyle.paddingWithAppBarHeight,
+          padding: TSpacingStyle.paddingWithAppBarHeight * 2,
           child: Column(
             children: [
-              Image(
-                image:  AssetImage(
-                  image
-                  //TImages.staticSuccessIllustration,
-                ),
-                width: THelperFunctions.screenWidth() * 0.6,
-              ),
+              /// Image
+               Lottie.asset(image, width: MediaQuery.of(context).size.width * 0.6),
               const SizedBox(
                 height: TSizes.spaceBtwSection,
               ),
@@ -52,7 +47,7 @@ class SuccessScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: onpressed,
+                      onPressed: onPressed,
                       child: const Text(TTexts.tContinue)))
             ],
           ),
