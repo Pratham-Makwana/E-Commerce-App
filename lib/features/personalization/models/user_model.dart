@@ -2,7 +2,7 @@ import 'package:e_commerce_app/utils/formatters/formatter.dart';
 
 /// Model Class Represent User Data.
 class UserModel {
-  // Keep those values final which you want ti update
+  // Keep those values final which you want to update
   final String id;
   String firstName;
   String lastName;
