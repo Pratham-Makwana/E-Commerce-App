@@ -19,16 +19,14 @@ class SignupController extends GetxController {
 
   /// Variable
   final hidePassword = true.obs; // Observable for hiding/showing password
-  final privacyPolicy = true.obs; // Observable for hiding/showing password
+  final privacyPolicy = false.obs; // Observable for hiding/showing password
   final email = TextEditingController(); // Controller for email input
   final lastname = TextEditingController(); // Controller for last name input
   final username = TextEditingController(); // Controller for username  input
   final password = TextEditingController(); // Controller for password input
   final firstname = TextEditingController(); // Controller for first name input
-  final phoneNumber =
-      TextEditingController(); // Controller for phone number input
-  GlobalKey<FormState> signupFormKey =
-      GlobalKey<FormState>(); // Form key for form validation
+  final phoneNumber = TextEditingController(); // Controller for phone number input
+  GlobalKey<FormState> signupFormKey = GlobalKey<FormState>(); // Form key for form validation
 
   /// -- SIGNUP
   Future<void> signup() async {
@@ -36,7 +34,7 @@ class SignupController extends GetxController {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
           'We are processing you information...',
-          TImages.productsSaleIllustration);
+          TImages.docerAnimation);
       // Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
@@ -49,11 +47,13 @@ class SignupController extends GetxController {
         TFullScreenLoader.stopLoading();
         return;
       }
-      ;
+
       // Privacy Policy Check
 
       if (!privacyPolicy.value) {
         TLoaders.warningSnackBar(title: 'Accept Privacy Policy', message: 'In Order to create account, you must have to read and accept the Privacy Policy and Terms of use ');
+        TFullScreenLoader.stopLoading();
+        return;
       }
 
       // Register user in the  FireBase Authentication & Save user data in Firebase
@@ -83,7 +83,7 @@ class SignupController extends GetxController {
       TLoaders.successSnackBar(title: 'Congratulation', message: 'Your account has been created! Verify email to continue');
 
       // Move to Verify Email
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() =>  VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
