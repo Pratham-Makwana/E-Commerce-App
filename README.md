@@ -44,3 +44,10 @@ So There Is Two Step:
 
 - SHA-1 Only Requirement For Firebase Google Sign In
 - Add SHA-256 For If You Want To Use Other Authentication
+
+* Dealing With Platform Exception:
+  - Error: Platform Exception
+  - Solution: Run Flutter Clean with the terminal, followed by flutter run
+* Dealing with Multidex Error:
+  - Error: Multidex Error
+  - Solution: Execute flutter run --multidex in terminal, and when prompted, press 'Y' to continue
