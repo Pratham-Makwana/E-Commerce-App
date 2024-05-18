@@ -24,5 +24,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
   // Todo: Initialise Authentication
+
+  // Load all the Material Design / Theme / Localizations / Binding
   runApp(const App());
 }
