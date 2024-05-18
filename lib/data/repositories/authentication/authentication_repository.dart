@@ -1,3 +1,5 @@
+
+
 import 'package:e_commerce_app/features/authentication/screens/OnBoarding/onboarding.dart';
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
@@ -33,9 +35,12 @@ class AuthenticationRepository extends GetxController {
   screenRedirect() async {
     final user = _auth.currentUser;
     if(user != null){
+      // If the user is logged in
       if(user.emailVerified){
+        // If the user's email is verified, navigate to the main Navigation Menu
         Get.offAll(() => const NavigationMenu());
       }else{
+        // If the user's email is not verified, navigate to the VerifyEmailScreen
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email,));
       }
     }else{
@@ -54,10 +59,24 @@ class AuthenticationRepository extends GetxController {
 
 /* ----------------------------------------- Email & Password sign-in --------------------------------------- */
 
-  /// [EmailAuthetication] - SignIn
+  /// [EmailAuthetication] - LogIn
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
+   try{
+     return _auth.signInWithEmailAndPassword(email: email, password: password);
+   }on FirebaseAuthException catch(e){
+     throw TFirebaseAuthException(e.code).message;
+   } on FirebaseException catch(e){
+     throw TFirebaseException(e.code).message;
+   }on FormatException catch(_){
+     throw const TFormatException();
+   }on PlatformException catch(e){
+     throw TPlatformException(e.code).message;
+   }catch(e){
+     throw 'Something went wrong. Please try again';
+   }
+  }
   /// [EmailAuthentication] - Register
-  Future<UserCredential> registerWithEmailAndPassword(
-      String email, String password) async {
+  Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
       /// createUserWithEmailAndPassword it is buildIn Function of firebase auth
       /// We are only returning  UserCredential in case we need it else
