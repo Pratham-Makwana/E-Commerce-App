@@ -19,7 +19,7 @@ class NetworkManager extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    //_connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
   }
 
 
@@ -27,7 +27,7 @@ class NetworkManager extends GetxController {
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
     if(_connectionStatus.value == ConnectivityResult.none){
-      TLoaders.warningSnackBar(title: 'No Internet Connection');
+      TLoaders.customToast(message: 'No Internet Connection');
     }
   }
 
