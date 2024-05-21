@@ -101,11 +101,27 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /// [ReAuthetication] - ReAuthetication User
   /// [EmailVerification] - Mail Verification
   Future<void> sendEmailVerification() async {
     try {
       await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  /// [EmailAuthenticate] - FORGET PASSWORD
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -130,28 +146,30 @@ class AuthenticationRepository extends GetxController {
 
       /// obtain the auth details from the request
       // user to be authenticated using the firebase
-      final GoogleSignInAuthentication? googleAuth = await userAccount?.authentication;
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
 
       /// Create the new Credentials
       // we get the current user current account & we get authenticate of that current account
       // now we create that authenticate for firebase
-      final credentials = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken,idToken: googleAuth?.idToken);
+      final credentials = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
 
       /// once signed in, return the UserCredentials
       // we have the credentials we pass those credentials to the firebase and return those credentials to the function which is calling sighInGoogle
       // so we can use the user Credentials and store the data of the user inside our firestore
       return await _auth.signInWithCredential(credentials);
-
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    }on FirebaseException catch(e){
+    } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
-    }on FormatException catch(_){
+    } on FormatException catch (_) {
       throw const TFormatException();
-    }on PlatformException catch(e){
+    } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    }catch(e){
-      if(kDebugMode) print('Something Went Wrong: $e');
+    } catch (e) {
+      // we don't displaying any technical error we catching it using if printing the error in KDebugMode and simply returning null
+      if (kDebugMode) print('Something Went Wrong: $e');
       return null;
     }
   }
