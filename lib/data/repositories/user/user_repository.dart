@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce_app/features/personalization/models/user_model.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/format_exceptions.dart';
@@ -14,17 +15,38 @@ class UserRepository extends GetxController {
 
   /// Function to save user data to Firestore
   Future<void> saveUserRecord(UserModel user) async {
-    try{
+    try {
       /// If you don't pass doc(user.id) (Document id it will be  random generate Document id)
       await _db.collection("Users").doc(user.id).set(user.toJson());
-    } on FirebaseException catch(e){
+    } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
-    } on FormatException catch(_){
+    } on FormatException catch (_) {
       throw const TFormatException();
-    }on PlatformException catch(e){
+    } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    }catch(e){
+    } catch (e) {
       throw 'Something went wrong. Please try again';
     }
   }
+
+  /// Function to fetch user details based on the User ID.
+  Future<UserModel> fetchUserDetails() async {
+    try {
+      final documentSnapshot = await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).get();
+      if (documentSnapshot.exists) {
+        return UserModel.fromSnapshot(documentSnapshot);
+      } else {
+        return UserModel.empty();
+      }
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
 }
