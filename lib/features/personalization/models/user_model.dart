@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/utils/formatters/formatter.dart';
 
 /// Model Class Represent User Data.
@@ -11,10 +12,9 @@ class UserModel {
   String phoneNumber;
   String profilePicture;
 
-
   /// Constructor for UserModel.
-  UserModel({
-      required this.id,
+  UserModel(
+      {required this.id,
       required this.firstName,
       required this.lastName,
       required this.username,
@@ -54,30 +54,32 @@ class UserModel {
       profilePicture: '');
 
   /// Convert model to JSON structure for storing data in Firebase.
-Map<String, dynamic> toJson()  {
-  return {
-    'FirstName': firstName,
-    'LastName':lastName,
-    'Username' : username,
-    'Email' : email,
-    'PhoneNumber':phoneNumber,
-    'ProfilePicture':profilePicture,
-  };
-}
+  Map<String, dynamic> toJson() {
+    return {
+      'FirstName': firstName,
+      'LastName': lastName,
+      'Username': username,
+      'Email': email,
+      'PhoneNumber': phoneNumber,
+      'ProfilePicture': profilePicture,
+    };
+  }
 
-  /// Factory method to create a UserMode from a Firebase document snapshot.
-  // factory UserModel.fromSnapshot(
-  //     DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if (document.data() != null) {
-  //     final data = document.data()!;
-  //     return UserModel(
-  //         id: document.id,
-  //         firstName: data['FirstName'] ?? '',
-  //         lastName: data['LastName'] ?? '',
-  //         username: data['Username'] ?? '',
-  //         email: data['Email'] ?? '',
-  //         phoneNumber: data['PhoneNumber'] ?? '',
-  //         profilePicture: data['ProfilePicture'] ?? '');
-  //   }
-  // }
+  /// Factory method to create a UserModel from a Firebase document snapshot.
+  factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data();
+      return UserModel(
+        id: document.id,
+        firstName: data?['FirstName'] ?? '',
+        lastName: data?['LastName'] ?? '',
+        username: data?['Username'] ?? '',
+        email: data?['Email'] ?? '',
+        phoneNumber: data?['PhoneNumber'] ?? '',
+        profilePicture: data?['ProfilePicture'] ?? '',
+      );
+    } else {
+      return UserModel.empty();
+    }
+  }
 }
