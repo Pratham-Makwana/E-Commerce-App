@@ -32,7 +32,10 @@ class UserRepository extends GetxController {
   /// Function to fetch user details based on the User ID.
   Future<UserModel> fetchUserDetails() async {
     try {
-      final documentSnapshot = await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).get();
+      final documentSnapshot = await _db
+          .collection("Users")
+          .doc(AuthenticationRepository.instance.authUser?.uid)
+          .get();
       if (documentSnapshot.exists) {
         return UserModel.fromSnapshot(documentSnapshot);
       } else {
@@ -50,17 +53,36 @@ class UserRepository extends GetxController {
   }
 
   /// Function to Update user data in Firestore
-  Future<void> updateUserDetails(UserModel updateUser)async {
-    try{
-      await _db.collection("User").doc(updateUser.id).update(updateUser.toJson());
-    }on FirebaseException catch(e){
+  Future<void> updateUserDetails(UserModel updateUser) async {
+    try {
+      await _db
+          .collection("Users")
+          .doc(updateUser.id)
+          .update(updateUser.toJson());
+    } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
-    }on FormatException catch(_){
+    } on FormatException catch (_) {
       throw const TFormatException();
-    }on PlatformException catch(e){
+    } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    }catch(e){
-      throw 'Something went wrong.Please try again';
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
     }
   }
+
+  /// Function any field in specific User Collection
+  Future<void> updateSingleField(Map<String, dynamic> json) async {
+    try {
+      await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).update(json);
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
 }
