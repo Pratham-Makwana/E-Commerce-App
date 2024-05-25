@@ -4,6 +4,7 @@ import 'package:e_commerce_app/common/widgets/list_tiles/setting_menu_tiles.dart
 import 'package:e_commerce_app/common/widgets/list_tiles/user_profile_tiles.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:e_commerce_app/features/shop/screens/card/cart.dart';
 import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -37,7 +38,9 @@ class SettingScreen extends StatelessWidget {
                   ),
 
                   /// User Profile Card
-                  const TUserProfileTitle(),
+                  TUserProfileTitle(
+                    onPressed: () => Get.to(() => const ProfileScreen()),
+                  ),
                   const SizedBox(
                     height: TSizes.spaceBtwSection,
                   ),
@@ -71,7 +74,7 @@ class SettingScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress and Completed Orders',
-                    onTap: () => Get.to(()=> const OrderScreen()),
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   TSettingMenuTile(
                     icon: Iconsax.bank,
