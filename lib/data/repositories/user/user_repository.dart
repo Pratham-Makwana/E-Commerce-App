@@ -73,7 +73,10 @@ class UserRepository extends GetxController {
   /// Function any field in specific User Collection
   Future<void> updateSingleField(Map<String, dynamic> json) async {
     try {
-      await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).update(json);
+      await _db
+          .collection("Users")
+          .doc(AuthenticationRepository.instance.authUser?.uid)
+          .update(json);
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
@@ -85,4 +88,18 @@ class UserRepository extends GetxController {
     }
   }
 
+  /// Function to remove user data form Firestore
+  Future<void> removeUserRecord(String userId) async {
+    try {
+      await _db.collection("Users").doc(userId).delete();
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }
