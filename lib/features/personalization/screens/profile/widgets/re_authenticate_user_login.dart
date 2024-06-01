@@ -50,14 +50,14 @@ class ReAuthLoginForm extends StatelessWidget {
                       suffixIcon: IconButton(
                         onPressed: () => controller.hiddenPassword.value =
                             !controller.hiddenPassword.value,
-                        icon: const Icon(Iconsax.eye_slash),
+                        icon:  Icon(controller.hiddenPassword.value ? Iconsax.eye_slash : Iconsax.eye),
                       )),
                 ),
               ),
 
               const SizedBox(height: TSizes.spaceBtwSection,),
 
-              ElevatedButton(onPressed: (){}, child: const Text('Save'))
+              SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => controller.reAuthenticateEmailAndPasswordUser(), child: const Text('Verify')))
             ],
           ),
         ),

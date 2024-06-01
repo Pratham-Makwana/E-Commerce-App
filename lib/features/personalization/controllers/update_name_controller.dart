@@ -16,9 +16,11 @@ class UpdateNameController extends GetxController {
   final lastName = TextEditingController();
 
   final userController = UserController.instance;
+  // UserRepository For Update Data
   final userRepository = Get.put(UserRepository());
   GlobalKey<FormState> updateUserNameFormKey = GlobalKey<FormState>();
 
+  /// init user data when Home Screen appears
   @override
   void onInit() {
     initializeNames();
@@ -27,6 +29,7 @@ class UpdateNameController extends GetxController {
 
   /// Fetch user record
   Future<void> initializeNames() async {
+    /// initialize two TextField With the value of the User
     firstName.text = userController.user.value.firstName;
     lastName.text = userController.user.value.lastName;
   }
