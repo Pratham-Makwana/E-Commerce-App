@@ -52,8 +52,8 @@ class ChangeName extends StatelessWidget {
                       labelText: TTexts.firstName,
                       prefixIcon: Icon(Iconsax.user),
                     ),
-
                   ),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
                   TextFormField(
                     expands: false,
                     controller: controller.lastName,

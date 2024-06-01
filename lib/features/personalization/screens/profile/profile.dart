@@ -1,12 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_images.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/personalization/controllers/user_controller.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -65,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
               TProfileMenu(
                 title: 'Name',
                 value: controller.user.value.fullName,
-                onPressed: () {},
+                onPressed: () => Get.to(()=> const ChangeName()),
               ),
               TProfileMenu(
                 title: 'Username',
@@ -123,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
 
               Center(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.deleteAccountWarningPopup(),
                   child: const Text(
                     'Close Account',
                     style: TextStyle(color: Colors.red),
