@@ -1,11 +1,15 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce_app/features/personalization/models/user_model.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 /// Repository Class For User-Related Operation
 class UserRepository extends GetxController {
@@ -90,6 +94,27 @@ class UserRepository extends GetxController {
     try {
       await _db.collection("Users").doc(userId).delete();
     } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  /// Upload any image
+  Future<String> uploadImage(String path, XFile image) async {
+    try{
+      //currently not adding but reference toward the path with unique name of the image in side firebase firestore
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      // it get complete image for here and convert into file and we pass this file to putFile and its going to store that file in to the ref
+      await ref.putFile(File(image.path));
+      // get the url of the uploaded image the store the data inside the firebase database
+      final url = await ref.getDownloadURL();
+      return url;
+    }on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
       throw const TFormatException();
