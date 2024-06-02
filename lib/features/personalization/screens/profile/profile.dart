@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/styles/shimmer.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_images.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
@@ -33,13 +34,25 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const TCircularImage(
-                      image: TImages.user,
-                      width: 80,
-                      height: 80,
-                    ),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image =
+                          networkImage.isNotEmpty ? networkImage : TImages.user;
+                      return controller.imageUploading.value
+                          ? const TShimmerEffect(
+                              width: 80,
+                              height: 80,
+                              radius: 80,
+                            )
+                          : TCircularImage(
+                              image: image,
+                              width: 80,
+                              height: 80,
+                              isNetworkImage: networkImage.isNotEmpty,
+                            );
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () => controller.uploadUserProfilePicture(),
                         child: const Text('Change Profile Picture'))
                   ],
                 ),
@@ -66,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
               TProfileMenu(
                 title: 'Name',
                 value: controller.user.value.fullName,
-                onPressed: () => Get.to(()=> const ChangeName()),
+                onPressed: () => Get.to(() => const ChangeName()),
               ),
               TProfileMenu(
                 title: 'Username',
