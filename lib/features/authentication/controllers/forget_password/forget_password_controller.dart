@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
-import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
