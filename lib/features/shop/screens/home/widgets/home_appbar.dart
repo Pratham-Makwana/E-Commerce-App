@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/common/styles/shimmer.dart';
+import 'package:e_commerce_app/common/widgets/Shimmers/shimmer.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/features/personalization/controllers/user_controller.dart';

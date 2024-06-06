@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/data/repositories/categories/category_repository.dart';
 import 'package:e_commerce_app/features/shop/models/category_model.dart';
-import 'package:e_commerce_app/utils/popups/full_screen_loader.dart';
 import 'package:e_commerce_app/utils/popups/loaders.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +27,8 @@ class CategoryController extends GetxController {
       final categories = await _categoryRepository.getAllCategories();
 
       // Update categories list
-      allCategories.assignAll(categories!);
+      // we use allCategories instead of using _categoryRepository.getAllCategories() this cloud query again n again
+      allCategories.assignAll(categories);
 
       // Filter featured categories
       featuredCategories.assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
@@ -36,10 +36,11 @@ class CategoryController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      isLoading.value = false;
     }
   }
 
   /// -- Load selected category data
   /// -- Get Category or Sub-Category Products.
+
 }

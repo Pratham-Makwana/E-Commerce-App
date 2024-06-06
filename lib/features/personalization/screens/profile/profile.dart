@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/common/styles/shimmer.dart';
+import 'package:e_commerce_app/common/widgets/Shimmers/shimmer.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_images.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';

@@ -39,7 +39,7 @@ class CategoryModel {
         name: data['Name'] ?? '',
         image: data['Image'] ?? '',
         parentId: data['ParentId'] ?? '',
-        isFeatured: data['isFeatured'] ?? false,
+        isFeatured: data['IsFeatured'] ?? false,
       );
     } else {
       return CategoryModel.empty();
