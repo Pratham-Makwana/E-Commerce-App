@@ -1,10 +1,13 @@
 
 
+import 'package:e_commerce_app/features/shop/models/banner_model.dart';
 import 'package:e_commerce_app/features/shop/models/category_model.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 
 class TDummyData{
-
+  static final List<BannerModel> banners = [
+    BannerModel(imageUrl: TImages.banner1, targetScreen: '', active: false),
+  ];
 
   static final List<CategoryModel> categories = [
     CategoryModel(name: 'Sports', id: '1', image: TImages.sportIcon, isFeatured: true),
