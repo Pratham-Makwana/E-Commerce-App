@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cart/product_cart_vertical.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,7 +33,7 @@ class TSortableProducts extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwSection,),
         /// Product
-        TGridLayout(itemCount: 5, itemBuilder: (_,index) => const TProductCartVertical())
+        TGridLayout(itemCount: 5, itemBuilder: (_,index) =>  TProductCartVertical(product: ProductModel.empty(),))
       ],
     );
   }

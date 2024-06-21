@@ -54,6 +54,22 @@ class TRoundedImage extends StatelessWidget {
                 ? NetworkImage(imageUrl)
                 : AssetImage(imageUrl) as ImageProvider,
           ),
+
+
+         /* isNetworkImage
+              ? CachedNetworkImage(
+            fit: boxFit,
+            imageUrl: image,
+            color: overlayColor,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+            const TShimmerEffect(width: 55, height: 55,radius: 55,),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          )
+              : Image(
+            image: AssetImage(image),
+            fit: boxFit,
+            color: overlayColor,
+          ),*/
         ),
       ),
     );
